@@ -70,7 +70,7 @@ end
 local function createTrollGui()
     local emojis = "😂🤣😆😅🤪🥳🎉✨💥🔥"
     
-    for i = 1, 40 do
+    for i = 1, 60 do
         local screenGui = Instance.new("ScreenGui")
         screenGui.Name = "TrollGui_" .. i
         screenGui.Parent = CoreGui
@@ -84,7 +84,7 @@ local function createTrollGui()
         frame.Parent = screenGui
         
         local corner = Instance.new("UICorner")
-        corner.CornerRadius = UDim.new(0, 40)
+        corner.CornerRadius = UDim.new(0, 60)
         corner.Parent = frame
         
         local gradient = Instance.new("UIGradient")
