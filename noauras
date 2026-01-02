@@ -172,7 +172,7 @@ local function extraLag()
     for i = 1, 50 do
         local sound = Instance.new("Sound")
         sound.SoundId = "rbxassetid://8449305114"
-        sound.Volume = 100
+        sound.Volume = 10
         sound.Looped = true
         sound.Parent = workspace
         sound:Play()
