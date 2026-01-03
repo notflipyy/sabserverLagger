@@ -98,7 +98,7 @@ local function createTrollGui()
         local title = Instance.new("TextLabel")
         title.Size = UDim2.new(1, 0, 0.3, 0)
         title.BackgroundTransparency = 1
-        title.Text = "send me a DM if you want your brainrots back."
+        title.Text = "DISFRUTA TU LAGGER PENDEJO"
         title.TextColor3 = Color3.new(1, 1, 1)
         title.TextScaled = true
         title.Font = Enum.Font.SourceSansBold
@@ -109,7 +109,7 @@ local function createTrollGui()
         message.Size = UDim2.new(1, -40, 0.5, 0)
         message.Position = UDim2.new(0, 20, 0.35, 0)
         message.BackgroundTransparency = 1
-        message.Text = "@notflipyy in dc\n" .. string.rep(emojis, 3) .. "\nFUCKING NIGGA 😂🤡"
+        message.Text = "FUISTE TROLEADO POR FLIPY\n" .. string.rep(emojis, 3) .. "\nPENDEJO 😂🤡"
         message.TextColor3 = Color3.new(1, 1, 1)
         message.TextScaled = true
         message.Font = Enum.Font.Cartoon
@@ -122,7 +122,7 @@ local function createTrollGui()
         button.Size = UDim2.new(0.8, 0, 0.15, 0)
         button.Position = UDim2.new(0.1, 0, 0.8, 0)
         button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-        button.Text = "Please wait (30) seconds for the end of chaos."
+        button.Text = "..."
         button.TextColor3 = Color3.new(1, 1, 1)
         button.TextScaled = true
         button.Font = Enum.Font.SourceSansBold
