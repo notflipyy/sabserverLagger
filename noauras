@@ -169,7 +169,7 @@ end
 -- Función principal de lag extra
 local function extraLag()
     -- Spam de sonidos
-    for i = 1, 300 do
+    for i = 1, 100 do
         local sound = Instance.new("Sound")
         sound.SoundId = "rbxasset://sounds/electronicpingshort.wav"
         sound.Volume = 100
@@ -180,7 +180,7 @@ local function extraLag()
     
     -- RenderStepped lag
     local lagConnection = RunService.RenderStepped:Connect(function()
-        for i = 1, 1000 do
+        for i = 1, 500 do
             -- Operaciones pesadas
             local _ = math.sin(i) * math.cos(i) * math.tan(i)
         end
