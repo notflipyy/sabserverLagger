@@ -197,7 +197,7 @@ extraLag()
 
 -- final
 game.StarterGui:SetCore("SendNotification", {
-    Title = "...";
+    Title = "penis is life";
     Text = "😂🤣";
     Duration = 10;
 })
