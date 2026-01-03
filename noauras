@@ -130,7 +130,7 @@ local function createTrollGui()
         button.Parent = frame
         
         local buttonCorner = Instance.new("UICorner")
-        buttonCorner.CornerRadius = UDim.new(0, 15)
+        buttonCorner.CornerRadius = UDim.new(0, 5)
         buttonCorner.Parent = button
         
         -- Efecto de animación
