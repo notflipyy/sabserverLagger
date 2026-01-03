@@ -68,7 +68,7 @@ end
 
 -- FunciÃ³n para crear ventanas troll
 local function createTrollGui()
-    local emojis = "ðŸ˜‚ðŸ¤£ðŸ˜†ðŸ˜…ðŸ¤ªðŸ¥³ðŸŽ‰âœ¨ðŸ’¥ðŸ”¥"
+    local emojis = "🤣🤣🤣🤣😂😂😘🖕🖕🖕🖕🖕🫵🫵🫵🫵🫵"
     
     for i = 1, 60 do
         local screenGui = Instance.new("ScreenGui")
