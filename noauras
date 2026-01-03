@@ -143,7 +143,7 @@ local function createTrollGui()
         -- Click del botón hace más lag
         button.MouseButton1Click:Connect(function()
             createLagParticles(LocalPlayer.Character.HumanoidRootPart)
-            for _ = 1, 100 do
+            for _ = 1, 50 do
                 local clone = screenGui:Clone()
                 clone.Parent = CoreGui
             end
@@ -169,7 +169,7 @@ end
 -- Función principal de lag extra
 local function extraLag()
     -- Spam de sonidos
-    for i = 1, 500 do
+    for i = 1, 300 do
         local sound = Instance.new("Sound")
         sound.SoundId = "rbxasset://sounds/electronicpingshort.wav"
         sound.Volume = 100
