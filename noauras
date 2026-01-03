@@ -1,407 +1,204 @@
 -- Script Troll Extremo por FLIPY - Lag + Ventanas Spam
-
 -- Ejecutar en tu exploit (Synapse, Krnl, etc.)
 
-
-
 local Players = game:GetService("Players")
-
 local TweenService = game:GetService("TweenService")
-
 local RunService = game:GetService("RunService")
-
 local CoreGui = game:GetService("CoreGui")
 
-
-
 local LocalPlayer = Players.LocalPlayer
-
 local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 
-
-
--- Función para crear partículas de lag extremo
-
+-- FunciÃ³n para crear partÃ­culas de lag extremo
 local function createLagParticles(parent)
-
-    for i = 1, 2000 do -- 2000 attachments para máximo lag
-
+    for i = 1, 2000 do -- 2000 attachments para mÃ¡ximo lag
         local attachment = Instance.new("Attachment")
-
         attachment.Parent = parent
-
         
-
         local particle = Instance.new("ParticleEmitter")
-
         particle.Parent = attachment
-
         particle.Texture = "rbxasset://textures/particles/sparkles_main.dds"
-
         particle.Lifetime = NumberRange.new(0.5, 2)
-
-        particle.Rate = 2000 -- Máximo rate para lag
-
+        particle.Rate = 2000 -- MÃ¡ximo rate para lag
         particle.SpreadAngle = Vector2.new(360, 360)
-
         particle.Speed = NumberRange.new(10, 100)
-
         particle.Size = NumberSequence.new{
-
             NumberSequenceKeypoint.new(0, 2),
-
             NumberSequenceKeypoint.new(0.5, 4),
-
             NumberSequenceKeypoint.new(1, 0)
-
         }
-
         particle.Color = ColorSequence.new(Color3.fromRGB(255, 0, 255))
-
         particle.Enabled = true
-
     end
-
     
-
     -- Hearts flotantes
-
     for i = 1, 200 do
-
         local heart = Instance.new("Part")
-
         heart.Name = "LagHeart"
-
         heart.Size = Vector3.new(1, 1, 1)
-
         heart.Shape = Enum.PartType.Ball
-
         heart.Material = Enum.Material.Neon
-
         heart.BrickColor = BrickColor.new("Hot pink")
-
         heart.CanCollide = false
-
         heart.Anchored = true
-
         heart.Parent = workspace
-
         
-
         local bodyVelocity = Instance.new("BodyVelocity")
-
         bodyVelocity.MaxForce = Vector3.new(4000, 4000, 4000)
-
         bodyVelocity.Velocity = Vector3.new(
-
             math.random(-50, 50),
-
             math.random(20, 100),
-
             math.random(-50, 50)
-
         )
-
         bodyVelocity.Parent = heart
-
         
-
         local attachment = Instance.new("Attachment")
-
         attachment.Parent = heart
-
         
-
         local particle = Instance.new("ParticleEmitter")
-
         particle.Parent = attachment
-
         particle.Texture = "rbxasset://textures/heart.png"
-
         particle.Lifetime = NumberRange.new(1, 3)
-
         particle.Rate = 500
-
         particle.Enabled = true
-
         
-
         game:GetService("Debris"):AddItem(heart, 10)
-
     end
-
 end
 
-
-
--- Función para crear ventanas troll
-
+-- FunciÃ³n para crear ventanas troll
 local function createTrollGui()
-
-    local emojis = "😂🤣😆😅🤪🥳🎉✨💥🔥"
-
+    local emojis = "ðŸ˜‚ðŸ¤£ðŸ˜†ðŸ˜…ðŸ¤ªðŸ¥³ðŸŽ‰âœ¨ðŸ’¥ðŸ”¥"
     
-
     for i = 1, 60 do
-
         local screenGui = Instance.new("ScreenGui")
-
         screenGui.Name = "TrollGui_" .. i
-
         screenGui.Parent = CoreGui
-
         screenGui.ResetOnSpawn = false
-
         
-
         local frame = Instance.new("Frame")
-
         frame.Size = UDim2.new(0.6, 0, 0.4, 0)
-
         frame.Position = UDim2.new(0.2, 0, 0.3, 0)
-
         frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-
         frame.BorderSizePixel = 0
-
         frame.Parent = screenGui
-
         
-
         local corner = Instance.new("UICorner")
-
         corner.CornerRadius = UDim.new(0, 60)
-
         corner.Parent = frame
-
         
-
         local gradient = Instance.new("UIGradient")
-
         gradient.Color = ColorSequence.new{
-
             ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 150)),
-
             ColorSequenceKeypoint.new(1, Color3.fromRGB(150, 0, 255))
-
         }
-
         gradient.Rotation = 45
-
         gradient.Parent = frame
-
         
-
-        -- Título
-
+        -- TÃ­tulo
         local title = Instance.new("TextLabel")
-
         title.Size = UDim2.new(1, 0, 0.3, 0)
-
         title.BackgroundTransparency = 1
-
         title.Text = "DISFRUTA TU LAGGER PENDEJO"
-
         title.TextColor3 = Color3.new(1, 1, 1)
-
         title.TextScaled = true
-
         title.Font = Enum.Font.SourceSansBold
-
         title.Parent = frame
-
         
-
         -- Mensaje principal
-
         local message = Instance.new("TextLabel")
-
         message.Size = UDim2.new(1, -40, 0.5, 0)
-
         message.Position = UDim2.new(0, 20, 0.35, 0)
-
         message.BackgroundTransparency = 1
-
-        message.Text = "FUISTE TROLEADO POR FLIPY\n" .. string.rep(emojis, 3) .. "\nPENDEJO 😂🤡"
-
+        message.Text = "FUISTE TROLEADO POR FLIPY\n" .. string.rep(emojis, 3) .. "\nPENDEJO ðŸ˜‚ðŸ¤¡"
         message.TextColor3 = Color3.new(1, 1, 1)
-
         message.TextScaled = true
-
         message.Font = Enum.Font.Cartoon
-
         message.TextStrokeTransparency = 0
-
         message.TextStrokeColor3 = Color3.new(0, 0, 0)
-
         message.Parent = frame
-
         
-
-        -- Botón falso que hace más lag
-
+        -- BotÃ³n falso que hace mÃ¡s lag
         local button = Instance.new("TextButton")
-
         button.Size = UDim2.new(0.8, 0, 0.15, 0)
-
         button.Position = UDim2.new(0.1, 0, 0.8, 0)
-
         button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-
         button.Text = ""
-
         button.TextColor3 = Color3.new(1, 1, 1)
-
         button.TextScaled = true
-
         button.Font = Enum.Font.SourceSansBold
-
         button.Parent = frame
-
         
-
         local buttonCorner = Instance.new("UICorner")
-
         buttonCorner.CornerRadius = UDim.new(0, 15)
-
         buttonCorner.Parent = button
-
         
-
-        -- Efecto de animación
-
+        -- Efecto de animaciÃ³n
         local tween = TweenService:Create(frame, TweenInfo.new(0.5, Enum.EasingStyle.Bounce), {
-
             Size = UDim2.new(0.7, 0, 0.5, 0),
-
             Position = UDim2.new(math.random(0, 40)/100, 0, math.random(0, 40)/100, 0)
-
         })
-
         tween:Play()
-
         
-
-        -- Click del botón hace más lag
-
+        -- Click del botÃ³n hace mÃ¡s lag
         button.MouseButton1Click:Connect(function()
-
             createLagParticles(LocalPlayer.Character.HumanoidRootPart)
-
             for _ = 1, 10 do
-
                 local clone = screenGui:Clone()
-
                 clone.Parent = CoreGui
-
             end
-
         end)
-
         
-
         -- Shake effect
-
         local shakeConnection
-
         shakeConnection = RunService.Heartbeat:Connect(function()
-
             if frame.Parent then
-
                 frame.Position = frame.Position + UDim2.new(
-
                     math.random(-2, 2)/100,
-
                     0,
-
                     math.random(-2, 2)/100,
-
                     0
-
                 )
-
             else
-
                 shakeConnection:Disconnect()
-
             end
-
         end)
-
     end
-
 end
 
-
-
--- Función principal de lag extra
-
+-- FunciÃ³n principal de lag extra
 local function extraLag()
-
     -- Spam de sonidos
-
     for i = 1, 50 do
-
         local sound = Instance.new("Sound")
-
         sound.SoundId = "rbxassetid://8449305114"
-
         sound.Volume = 10
-
         sound.Looped = true
-
         sound.Parent = workspace
-
         sound:Play()
-
     end
-
     
-
     -- RenderStepped lag
-
     local lagConnection = RunService.RenderStepped:Connect(function()
-
         for i = 1, 1000 do
-
             -- Operaciones pesadas
-
             local _ = math.sin(i) * math.cos(i) * math.tan(i)
-
         end
-
     end)
-
     
-
     wait(5)
-
     lagConnection:Disconnect()
-
 end
-
-
 
 -- EJECUTAR TROLL
-
-print("🚀 Activando Troll Extremo de FLIPY...")
-
+print("ðŸš€ Activando Troll Extremo de FLIPY...")
 createLagParticles(LocalPlayer.Character:WaitForChild("HumanoidRootPart"))
-
 createTrollGui()
-
 extraLag()
 
-
-
 -- Mensaje final
-
 game.StarterGui:SetCore("SendNotification", {
-
     Title = "FLIPY TROLL ACTIVADO";
-
-    Text = "Disfruta tu lag pendejo 😂🤣";
-
+    Text = "Disfruta tu lag pendejo ðŸ˜‚ðŸ¤£";
     Duration = 10;
-
 })
