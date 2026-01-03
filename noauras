@@ -11,7 +11,7 @@ local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 
 -- Función para crear partículas
 local function createLagParticles(parent)
-    for i = 1, 1000 do -- 1000 attachments para máximo lag
+    for i = 1, 500 do -- 1000 attachments para máximo lag
         local attachment = Instance.new("Attachment")
         attachment.Parent = parent
         
@@ -19,7 +19,7 @@ local function createLagParticles(parent)
         particle.Parent = attachment
         particle.Texture = "rbxasset://textures/particles/sparkles_main.dds"
         particle.Lifetime = NumberRange.new(0.5, 2)
-        particle.Rate = 1200 -- Máximo rate para lag
+        particle.Rate = 1000 -- Máximo rate para lag
         particle.SpreadAngle = Vector2.new(360, 360)
         particle.Speed = NumberRange.new(10, 50)
         particle.Size = NumberSequence.new{
@@ -70,7 +70,7 @@ end
 local function createTrollGui()
     local emojis = "😂🤣😆😅🤪🥳🎉✨💥🔥"
     
-    for i = 1, 50 do
+    for i = 1, 45 do
         local screenGui = Instance.new("ScreenGui")
         screenGui.Name = "TrollGui_" .. i
         screenGui.Parent = CoreGui
@@ -84,7 +84,7 @@ local function createTrollGui()
         frame.Parent = screenGui
         
         local corner = Instance.new("UICorner")
-        corner.CornerRadius = UDim.new(0, 50)
+        corner.CornerRadius = UDim.new(0, 45)
         corner.Parent = frame
         
         local gradient = Instance.new("UIGradient")
