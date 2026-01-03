@@ -9,9 +9,9 @@ local CoreGui = game:GetService("CoreGui")
 local LocalPlayer = Players.LocalPlayer
 local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 
--- Función para crear partículas de lag extremo
+-- Función para crear partículas
 local function createLagParticles(parent)
-    for i = 1, 1200 do -- 1200 attachments para máximo lag
+    for i = 1, 1000 do -- 1000 attachments para máximo lag
         local attachment = Instance.new("Attachment")
         attachment.Parent = parent
         
@@ -70,7 +70,7 @@ end
 local function createTrollGui()
     local emojis = "😂🤣😆😅🤪🥳🎉✨💥🔥"
     
-    for i = 1, 60 do
+    for i = 1, 50 do
         local screenGui = Instance.new("ScreenGui")
         screenGui.Name = "TrollGui_" .. i
         screenGui.Parent = CoreGui
@@ -84,7 +84,7 @@ local function createTrollGui()
         frame.Parent = screenGui
         
         local corner = Instance.new("UICorner")
-        corner.CornerRadius = UDim.new(0, 60)
+        corner.CornerRadius = UDim.new(0, 50)
         corner.Parent = frame
         
         local gradient = Instance.new("UIGradient")
@@ -92,7 +92,7 @@ local function createTrollGui()
             ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 150)),
             ColorSequenceKeypoint.new(1, Color3.fromRGB(150, 0, 255))
         }
-        gradient.Rotation = 50
+        gradient.Rotation = 45
         gradient.Parent = frame
         
         -- Título
@@ -123,7 +123,7 @@ local function createTrollGui()
         button.Size = UDim2.new(0.8, 0, 0.15, 0)
         button.Position = UDim2.new(0.1, 0, 0.8, 0)
         button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-        button.Text = ""
+        button.Text = "Please wait (30) seconds for the end of chaos."
         button.TextColor3 = Color3.new(1, 1, 1)
         button.TextScaled = true
         button.Font = Enum.Font.SourceSansBold
